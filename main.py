@@ -44,9 +44,9 @@ def task_1(use_linalg_formulation=False):
     ]
 
     uncorrelated_pairs = [
-        ('acceleration', 'model_year'),
-        ('origin', 'mpg'),
-        ('cylinders', 'acceleration')
+        ('cylinders', 'model_year'),
+        ('horsepower', 'model_year'),
+        ('weight', 'model_year')
     ]
     
     all_pairs = [('Correlated', correlated_pairs), ('Uncorrelated', uncorrelated_pairs)]
@@ -283,7 +283,6 @@ def task_3(initial_plot=True):
 
 def main():
     np.random.seed(46)
-
     task_1(use_linalg_formulation=False)
     task_2()
     task_3(initial_plot=True)
