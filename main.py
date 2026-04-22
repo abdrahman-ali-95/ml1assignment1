@@ -44,8 +44,8 @@ def task_1(use_linalg_formulation=False):
     ]
 
     uncorrelated_pairs = [
-        ('cylinders', 'model_year'),
-        ('horsepower', 'model_year'),
+        ('model_year', 'origin'),
+        ('acceleration', 'origin'),
         ('weight', 'model_year')
     ]
     
