@@ -222,7 +222,9 @@ def task_2():
         #  You need to pass (1) the true binary labels and (2) the probability of the *positive* class to `log_loss`.
         #  Since the output of `predict_proba` is of shape (n_samples, n_classes), you need to select the probabilities
         #  of the positive class by indexing the second column (index 1).
-        loss_train, loss_test = log_loss(y_train, yhat_train), log_loss(y_test, yhat_test)
+      
+        loss_train, loss_test = log_loss(y_train, yhat_train[:, 1]), log_loss(y_test, yhat_test[:, 1])
+      
         print(f'Train loss: {loss_train}. Test loss: {loss_test}.')
 
         plot_logistic_regression(clf, create_design_matrix, X_train, f'(Dataset {task}) Train set predictions',
