@@ -223,7 +223,7 @@ def task_2():
         #  Since the output of `predict_proba` is of shape (n_samples, n_classes), you need to select the probabilities
         #  of the positive class by indexing the second column (index 1).
       
-        loss_train, loss_test = log_loss(y_train, yhat_train[:, 1]), log_loss(y_test, yhat_test[:, 1])
+        loss_train, loss_test = log_loss(y_train, yhat_train), log_loss(y_test, yhat_test)
       
         print(f'Train loss: {loss_train}. Test loss: {loss_test}.')
 
