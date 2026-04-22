@@ -12,7 +12,7 @@ def create_design_matrix_dataset_1(X_data: np.ndarray) -> np.ndarray:
     x1 = X_data[:, 0]
     x2 = X_data[:, 1]
 
-    X = np.column_stack((x1, x2))
+    X = np.column_stack([X_data, x1**2, x2**2, x1 * x2])
 
     assert X.shape[0] == X_data.shape[0], """The number of rows in the design matrix X should be the same as
                                              the number of data points."""
@@ -30,8 +30,7 @@ def create_design_matrix_dataset_2(X_data: np.ndarray) -> np.ndarray:
 
     x1 = X_data[:, 0]
     x2 = X_data[:, 1]
-
-    X = np.column_stack((x1, x2, x1**2))
+    X = np.column_stack([X_data, x1**2, x2**2, x1*x2, x1**3, x2**3])
 
     assert X.shape[0] == X_data.shape[0], """The number of rows in the design matrix X should be the same as
                                              the number of data points."""
@@ -49,13 +48,8 @@ def create_design_matrix_dataset_3(X_data: np.ndarray) -> np.ndarray:
     # TODO: Create the design matrix X for dataset 3
 
     x1 = X_data[:, 0]
-    x2 = X_data[:, 1]
 
-    X = np.column_stack((
-        x1, x2, 
-        x1**2, x2**2, x1*x2, 
-        x1**3, x2**3, (x1**2)*x2, x1*(x2**2)
-    ))
+    X = np.column_stack([X_data, x1**2, x1**3])
 
     assert X.shape[0] == X_data.shape[0], """The number of rows in the design matrix X should be the same as
                                              the number of data points."""
@@ -77,3 +71,5 @@ def logistic_regression_params_sklearn():
         'max_iter': 10000,
         'random_state': 0
     }
+
+    # return {'penalty': 'l2', 'solver': 'saga', 'max_iter': 10000}
