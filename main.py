@@ -263,9 +263,9 @@ def task_3(initial_plot=True):
     x_list, y_list, f_list = gradient_descent(
         griewank, gradient_griewank, 
         x0, y0, 
-        learning_rate=2.5, 
-        lr_decay=0.99, 
-        num_iters=250
+        learning_rate = 5,
+        lr_decay = 0.8,
+        num_iters = 250
     )
 
     # Print the point that is found after `num_iters` iterations
