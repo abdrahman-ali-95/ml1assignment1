@@ -71,3 +71,5 @@ def logistic_regression_params_sklearn():
         'max_iter': 10000,
         'random_state': 0
     }
+
+    # return {'penalty': 'l2', 'solver': 'saga', 'max_iter': 10000}
